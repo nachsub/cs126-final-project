@@ -20,5 +20,6 @@ The user who scores the most points by the time the objects on the screen
 are gone wins. 
 
 [OpenFrameworks ofxOsc](https://openframeworks.cc/documentation/ofxOsc/)
-This library handles the communication between devices.
+[OpenFrameworks ofxNetwork](https://openframeworks.cc/documentation/ofxNetwork/)
+These libraries handles the communication between devices.
 
