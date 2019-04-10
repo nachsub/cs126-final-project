@@ -21,5 +21,5 @@ are gone wins.
 
 [OpenFrameworks ofxOsc](https://openframeworks.cc/documentation/ofxOsc/)
 [OpenFrameworks ofxNetwork](https://openframeworks.cc/documentation/ofxNetwork/)
-These libraries handles the communication between devices.
+These libraries handle the communication between devices.
 
