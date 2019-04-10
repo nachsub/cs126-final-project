@@ -1,4 +1,4 @@
-I will make breakout that has a global leaderboard.
+I will make breakout with a global leaderboard.
 The user moves the paddle horizontally on the bottom of the screen, but 
 the speed of the ball increases as you go. The score is calculated based on
 how many times the ball hits the objects on the screen. 
