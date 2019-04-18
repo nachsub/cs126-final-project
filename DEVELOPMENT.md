@@ -1,0 +1,1 @@
+Could not access OpenFrameworksLib.log, fixed by running vs as admin
