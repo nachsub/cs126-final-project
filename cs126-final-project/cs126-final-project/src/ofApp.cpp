@@ -4,17 +4,23 @@
 ofImage image;
 ofImage ball;
 
-const int image_width = 80;
-const int image_height = 80;
-const int ball_width = 40;
-const int ball_height = 40;
+const int image_width = 100;
+const int image_height = 70;
+const int ball_width = 50;
+const int ball_height = 50;
+int image_y;
 
 bool moveLeft;
 bool moveRight;
+bool onRightEdge;
+bool onLeftEdge;
+bool onTopEdge;
 
 int image_x; //spaceship's x value 
 int ball_x;  //ball's x value
 int ball_y;  //ball's y value
+
+glm::vec2 ball_speed(3, 3);
 
 
 //--------------------------------------------------------------
@@ -24,6 +30,7 @@ void ofApp::setup(){
 	image_x = ofGetWidth() / 2;
 	ball_x = ofGetWidth() / 2;
 	ball_y = ofGetHeight() / 2;
+	image_y = ofGetHeight() - image_height;
 	ball.load("basketball.png");
 	image.load("spaceship.png");
 	image.resize(image_width, image_height);
@@ -33,56 +40,31 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
-	glm::vec2 vec(1, 1);
 	ofRectangle ballRect(ball_x, ball_y, ball_width, ball_height);
-	ofRectangle rightImgRect(image_x + (image_width / 2), ofGetHeight() - image_height, image_width / 2, image_height);
-	ofRectangle leftImgRect(image_x, ofGetHeight() - image_height, image_width / 2, image_height);
-	ballRect.standardize();
-	rightImgRect.standardize();
-	leftImgRect.standardize();
-	if (!moveLeft && !moveRight) {
+	ofRectangle rightImgRect(image_x + (image_width / 2), image_y, image_width / 2, image_height);
+	ofRectangle leftImgRect(image_x, image_y, image_width / 2, image_height);
+	
+	if (!moveLeft && !moveRight && !(ballRect.intersects(rightImgRect) || ballRect.intersects(leftImgRect))) {
 		ball_y = ball_y + 5;
+		return;
 	}
 
 	if (ballRect.intersects(rightImgRect)) {
 		moveRight = true;
-	} else if (ballRect.intersects(leftImgRect)) {
+		ball_speed.y = (-1)*ball_speed.y;
+	} 
+	if (ballRect.intersects(leftImgRect)) {
 		moveLeft = true;
+		ball_speed = (-1)*ball_speed;
 	}
-
-	if (ball_y >= ofGetHeight() - ball_height && moveLeft) {
-		ball_x = ball_x - 1;
-		ball_y = ball_y + 2;
+	if (ball_x <= ball_width / 2) {
+		ball_speed.x = -ball_speed.x;
 	}
-	if (ball_y >= ofGetHeight() - ball_height && moveRight) {
-		ball_x = ball_x + 1;
-		ball_y = ball_y + 2;
+	if (ball_y <= ball_width / 2) {
+		ball_speed.y = -ball_speed.y;
 	}
-	if (ball_x <= ball_width && moveLeft) {
-		ball_x = ball_x + 2;
-		ball_y = ball_y - 2;
-	}
-	if (ball_x <= ball_width && moveRight) {
-		ball_x = ball_x + 2;
-		ball_y = ball_y + 2;
-	}
-	if (ball_x >= ofGetWidth() - ball_width && moveLeft) {
-		ball_x = ball_x - 2;
-		ball_y = ball_y - 2;
-	}
-	if (ball_x >= ofGetWidth() - ball_width && moveRight) {
-		ball_x = ball_x - 2;
-		ball_y = ball_y + 2;
-	}
-
-	if (moveLeft && ball_x >= 0 && ball_x < ofGetWidth() - ball_width) {
-		ball_x = ball_x - 1;
-		ball_y = ball_y - 2;
-	}
-	if (moveRight && ball_x <= ofGetWidth() - ball_width) {
-		ball_x = ball_x + 2;
-		ball_y = ball_y - 3;
-	}
+	ball_x += ball_speed.x;
+	ball_y += ball_speed.y;
 }
 
 //--------------------------------------------------------------
