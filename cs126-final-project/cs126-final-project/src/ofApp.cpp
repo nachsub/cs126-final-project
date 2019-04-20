@@ -48,21 +48,23 @@ void ofApp::update(){
 		ball_y = ball_y + 5;
 		return;
 	}
-
+	//ball hits spaceship image
 	if (ballRect.intersects(rightImgRect)) {
 		moveRight = true;
-		ball_speed.y = (-1)*ball_speed.y;
-	} 
-	if (ballRect.intersects(leftImgRect)) {
+		ball_speed.y = -ball_speed.y;
+	} else if (ballRect.intersects(leftImgRect)) {
 		moveLeft = true;
 		ball_speed = (-1)*ball_speed;
 	}
+	//ball hits edge
 	if (ball_x <= ball_width / 2) {
 		ball_speed.x = -ball_speed.x;
-	}
-	if (ball_y <= ball_width / 2) {
+	} else if (ball_y <= ball_width) {
 		ball_speed.y = -ball_speed.y;
+	} else if (ball_x >= ofGetWidth() - ball_width) {
+		ball_speed.x = -ball_speed.x;
 	}
+
 	ball_x += ball_speed.x;
 	ball_y += ball_speed.y;
 }
