@@ -9,7 +9,6 @@ const int image_height = 80;
 const int ball_width = 40;
 const int ball_height = 40;
 
-bool isMoving;
 bool moveLeft;
 bool moveRight;
 
@@ -20,7 +19,8 @@ int ball_y;  //ball's y value
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-	isMoving = false;
+	moveLeft = false;
+	moveRight = false;
 	image_x = ofGetWidth() / 2;
 	ball_x = ofGetWidth() / 2;
 	ball_y = ofGetHeight() / 2;
@@ -34,26 +34,54 @@ void ofApp::setup(){
 //--------------------------------------------------------------
 void ofApp::update(){
 	glm::vec2 vec(1, 1);
-	ofRectangle imgRect(image_x, ofGetHeight() - image_height, image_width, image_height);
-	ofRectangle rightBallRect(ball_x + ball_width / 2, ball_y, ball_width / 2, ball_height);
-	ofRectangle leftBallRect(ball_x, ball_y, ball_width / 2, ball_height);
-
-	if (!isMoving) {
+	ofRectangle ballRect(ball_x, ball_y, ball_width, ball_height);
+	ofRectangle rightImgRect(image_x + (image_width / 2), ofGetHeight() - image_height, image_width / 2, image_height);
+	ofRectangle leftImgRect(image_x, ofGetHeight() - image_height, image_width / 2, image_height);
+	ballRect.standardize();
+	rightImgRect.standardize();
+	leftImgRect.standardize();
+	if (!moveLeft && !moveRight) {
 		ball_y = ball_y + 5;
 	}
-	if (imgRect.inside(rightBallRect)) {
+
+	if (ballRect.intersects(rightImgRect)) {
 		moveRight = true;
-	}
-	if (imgRect.inside(leftBallRect)) {
+	} else if (ballRect.intersects(leftImgRect)) {
 		moveLeft = true;
 	}
-	if (moveLeft && ball_x >= 0 && ball_x < ofGetWidth() - ball_width) {
-		ball_x = ball_x - 10;
-		ball_y = ball_y - 10;
+
+	if (ball_y >= ofGetHeight() - ball_height && moveLeft) {
+		ball_x = ball_x - 1;
+		ball_y = ball_y + 2;
 	}
-	if (moveRight && ball_x < ofGetWidth() - ball_width) {
-		ball_x = ball_x + 10;
-		ball_y = ball_y - 10;
+	if (ball_y >= ofGetHeight() - ball_height && moveRight) {
+		ball_x = ball_x + 1;
+		ball_y = ball_y + 2;
+	}
+	if (ball_x <= ball_width && moveLeft) {
+		ball_x = ball_x + 2;
+		ball_y = ball_y - 2;
+	}
+	if (ball_x <= ball_width && moveRight) {
+		ball_x = ball_x + 2;
+		ball_y = ball_y + 2;
+	}
+	if (ball_x >= ofGetWidth() - ball_width && moveLeft) {
+		ball_x = ball_x - 2;
+		ball_y = ball_y - 2;
+	}
+	if (ball_x >= ofGetWidth() - ball_width && moveRight) {
+		ball_x = ball_x - 2;
+		ball_y = ball_y + 2;
+	}
+
+	if (moveLeft && ball_x >= 0 && ball_x < ofGetWidth() - ball_width) {
+		ball_x = ball_x - 1;
+		ball_y = ball_y - 2;
+	}
+	if (moveRight && ball_x <= ofGetWidth() - ball_width) {
+		ball_x = ball_x + 2;
+		ball_y = ball_y - 3;
 	}
 }
 
