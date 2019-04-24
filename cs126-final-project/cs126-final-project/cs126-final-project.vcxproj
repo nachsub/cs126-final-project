@@ -216,6 +216,7 @@ C:\Program Files\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\osc;%(
     <ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src\ofxTCPServer.cpp" />
     <ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src\ofxUDPManager.cpp" />
     <ClCompile Include="src\ball.cpp" />
+    <ClCompile Include="src\image.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
   </ItemGroup>
@@ -240,6 +241,7 @@ C:\Program Files\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\osc;%(
     <ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src\ofxUDPManager.h" />
     <ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src\ofxUDPSettings.h" />
     <ClInclude Include="src\ball.h" />
+    <ClInclude Include="src\image.h" />
     <ClInclude Include="src\ofApp.h" />
   </ItemGroup>
   <ItemGroup>

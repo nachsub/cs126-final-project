@@ -1,17 +1,12 @@
 #include "ofApp.h"
 
 
-ofImage image;
 ofImage game_over;
 
-const int image_width = 100;
-const int image_height = 70;
 
 const int go_height = 700;
 const int go_width = 700;
 
-int image_x; //spaceship's x value 
-int image_y;
 int score;
 
 
@@ -22,16 +17,14 @@ const int ball_x_speed = 3; //ball x_speed
 const int ball_y_speed = 3; //ball y_speed
 
 Ball ball(ballname, ball_x_speed, ball_y_speed);
+Image image(shipname);
 
 //--------------------------------------------------------------
 void ofApp::setup(){
 	score = 0;
-	image_x = ofGetWidth() / 2;
 	ball.setup();
-	image_y = ofGetHeight() - image_height;
-	image.load(shipname);
+	image.setup();
 	game_over.load(gameover);
-	image.resize(image_width, image_height);
 	game_over.resize(ofGetWidth() / 2, ofGetHeight() / 2);
 	ofBackground(0, 0, 0);
 }
@@ -39,8 +32,8 @@ void ofApp::setup(){
 //--------------------------------------------------------------
 void ofApp::update(){
 	ofRectangle ballRect(ball.x, ball.y, ball.ball_width, ball.ball_height);
-	ofRectangle rightImgRect(image_x + (image_width / 2), image_y, image_width / 2, image_height);
-	ofRectangle leftImgRect(image_x, image_y, image_width / 2, image_height);
+	ofRectangle rightImgRect(image.x + (image.image_width / 2), image.y, image.image_width / 2, image.image_height);
+	ofRectangle leftImgRect(image.x, image.y, image.image_width / 2, image.image_height);
 	//ball drops at beginning
 	if (!ball.moveLeft && !ball.moveRight && !(ballRect.intersects(rightImgRect) || ballRect.intersects(leftImgRect))) {
 		ball.y = ball.y + 5;
@@ -74,7 +67,7 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
 	ball.draw();
-	image.draw(image_x, ofGetHeight() - image_height);
+	image.draw();
 	if (ball.y >= ofGetHeight() - ball.ball_height) {
 		game_over.draw(0, 0);
 	}
@@ -82,11 +75,11 @@ void ofApp::draw(){
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-	if (key == 'd' && image_x < ofGetWidth() - image_width){
-		image_x += 20;
+	if (key == 'd' && image.x < ofGetWidth() - image.image_width){
+		image.x += 20;
 	} 
-	if (key == 'a' && image_x >= 0) {
-		image_x -= 20;
+	if (key == 'a' && image.x >= 0) {
+		image.x -= 20;
 	}
 }
 

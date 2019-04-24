@@ -1,5 +1,6 @@
 #pragma once
 #include "ball.h"
+#include "image.h"
 #include "ofMain.h"
 #include <string>
 

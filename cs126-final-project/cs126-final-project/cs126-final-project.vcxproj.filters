@@ -55,6 +55,9 @@
     <ClCompile Include="src\ball.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\image.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -138,6 +141,9 @@
       <Filter>addons\ofxNetwork\src</Filter>
     </ClInclude>
     <ClInclude Include="src\ball.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\image.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
