@@ -2,77 +2,82 @@
 
 
 ofImage image;
-ofImage ball;
+ofImage game_over;
 
 const int image_width = 100;
 const int image_height = 70;
-const int ball_width = 50;
-const int ball_height = 50;
-int image_y;
 
-bool moveLeft;
-bool moveRight;
-bool onRightEdge;
-bool onLeftEdge;
-bool onTopEdge;
+const int go_height = 700;
+const int go_width = 700;
 
 int image_x; //spaceship's x value 
-int ball_x;  //ball's x value
-int ball_y;  //ball's y value
+int image_y;
+int score;
 
-glm::vec2 ball_speed(3, 3);
 
+string shipname = "spaceship.png";
+string gameover = "gameover.png";
+string ballname = "basketball.png";
+const int ball_x_speed = 3; //ball x_speed
+const int ball_y_speed = 3; //ball y_speed
+
+Ball ball(ballname, ball_x_speed, ball_y_speed);
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-	moveLeft = false;
-	moveRight = false;
+	score = 0;
 	image_x = ofGetWidth() / 2;
-	ball_x = ofGetWidth() / 2;
-	ball_y = ofGetHeight() / 2;
+	ball.setup();
 	image_y = ofGetHeight() - image_height;
-	ball.load("basketball.png");
-	image.load("spaceship.png");
+	image.load(shipname);
+	game_over.load(gameover);
 	image.resize(image_width, image_height);
-	ball.resize(ball_width, ball_height);
+	game_over.resize(ofGetWidth() / 2, ofGetHeight() / 2);
 	ofBackground(0, 0, 0);
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-	ofRectangle ballRect(ball_x, ball_y, ball_width, ball_height);
+	ofRectangle ballRect(ball.x, ball.y, ball.ball_width, ball.ball_height);
 	ofRectangle rightImgRect(image_x + (image_width / 2), image_y, image_width / 2, image_height);
 	ofRectangle leftImgRect(image_x, image_y, image_width / 2, image_height);
-	
-	if (!moveLeft && !moveRight && !(ballRect.intersects(rightImgRect) || ballRect.intersects(leftImgRect))) {
-		ball_y = ball_y + 5;
+	//ball drops at beginning
+	if (!ball.moveLeft && !ball.moveRight && !(ballRect.intersects(rightImgRect) || ballRect.intersects(leftImgRect))) {
+		ball.y = ball.y + 5;
 		return;
 	}
 	//ball hits spaceship image
 	if (ballRect.intersects(rightImgRect)) {
-		moveRight = true;
-		ball_speed.y = -ball_speed.y;
+		ball.moveRight = true;
+		ball.ball_speed.y = -ball.ball_speed.y;
+		score++;
 	} else if (ballRect.intersects(leftImgRect)) {
-		moveLeft = true;
-		ball_speed = (-1)*ball_speed;
+		ball.moveLeft = true;
+		ball.ball_speed = (-1)*ball.ball_speed;
+		score++;
 	}
-	//ball hits edge
-	if (ball_x <= ball_width / 2) {
-		ball_speed.x = -ball_speed.x;
-	} else if (ball_y <= ball_width) {
-		ball_speed.y = -ball_speed.y;
-	} else if (ball_x >= ofGetWidth() - ball_width) {
-		ball_speed.x = -ball_speed.x;
+	
+	if (ball.x <= ball.ball_width / 2) {     //ball hits left edge
+		ball.ball_speed.x = -ball.ball_speed.x;
+	} else if (ball.y <= ball.ball_width) {  //ball hits top 
+		ball.ball_speed.y = -ball.ball_speed.y;
+	} else if (ball.x >= ofGetWidth() - ball.ball_width) { //ball hits right
+		ball.ball_speed.x = -ball.ball_speed.x;
 	}
 
-	ball_x += ball_speed.x;
-	ball_y += ball_speed.y;
+	ball.x += ball.ball_speed.x;
+	ball.y += ball.ball_speed.y;
 }
+
+
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-	ball.draw(ball_x, ball_y);
+	ball.draw();
 	image.draw(image_x, ofGetHeight() - image_height);
+	if (ball.y >= ofGetHeight() - ball.ball_height) {
+		game_over.draw(0, 0);
+	}
 }
 
 //--------------------------------------------------------------

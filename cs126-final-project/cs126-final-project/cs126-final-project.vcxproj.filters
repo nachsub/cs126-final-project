@@ -52,6 +52,9 @@
     <ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src\ofxUDPManager.cpp">
       <Filter>addons\ofxNetwork\src</Filter>
     </ClCompile>
+    <ClCompile Include="src\ball.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -133,6 +136,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src\ofxUDPSettings.h">
       <Filter>addons\ofxNetwork\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ball.h">
+      <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
