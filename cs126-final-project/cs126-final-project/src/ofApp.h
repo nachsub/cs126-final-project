@@ -1,24 +1,40 @@
 #pragma once
 #include "ball.h"
 #include "ofxHTTP.h"
+#include "ofxGui.h"
 #include "image.h"
 #include "background.h"
 #include "ofMain.h"
+#include <map>
 #include <string>
 
 class ofApp : public ofBaseApp{
 
 	public:
+		//game over screen width & height
 		const int go_height = 700;
 		const int go_width = 700;
+
 		const int ball_x_speed = 3; //ball x_speed
 		const int ball_y_speed = 3; //ball y_speed
+
+		//number of scores on the leaderboard
+		const static int leaderboard_count = 5;
+
+		//file names for images
 		std::string shipname = "spaceship.png";
 		std::string gameover = "gameover.png";
 		std::string ballname = "basketball.png";
-		
 
-		ofImage game_over;
+		//json name
+		std::string json_name;
+
+		//username
+		std::string username;
+		
+		//list of scores
+		ofParameter<int> scores[leaderboard_count];
+		ofxPanel gui;
 
 		int score;
 

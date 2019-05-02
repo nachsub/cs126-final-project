@@ -1,5 +1,5 @@
 ofxGui
-ofxHTTP-master
+ofxHTTP
 ofxIO-master
 ofxMediaType-master
 ofxNetwork
