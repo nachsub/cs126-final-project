@@ -14,6 +14,9 @@ This will be used to handle the graphics.
 [FireBase](https://firebase.google.com/docs/cpp/setup#create_firebase_project)
 This will be used to create and populate the database with user names and scores.
 
+[ofxHttp](https://github.com/bakercp/ofxHTTP)
+This will be used to make http requests to the database.
+
 If I have finished the above, I plan on adding an online feature where 
 someone running the game on their device can play against someone else. 
 The user who scores the most points by the time the objects on the screen

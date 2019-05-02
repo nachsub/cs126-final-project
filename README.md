@@ -1,8 +1,8 @@
 # Final Project
 <h1> cs 126 breakout <h1>
 
-To run this game, git clone the following links into addons, and use the open frameworks project generator 
-to add them to the project.
+To build this game, git clone the following links into addons, and use the open frameworks project generator 
+to add them to the project (as well as ofxPoco and ofxGui). 
 
 [ofxHttp](https://github.com/bakercp/ofxHTTP)
 [ofxIO](https://github.com/bakercp/ofxIO)
