@@ -14,3 +14,5 @@ which fixed it.
 While adding ofxHttp and its dependecies through project generator, I had no errors, but needed 
 to run as admin.
 
+Get and Json request documentation was online, but I kept getting a 400 bad request error. To fix this, I had to 
+add .json to the uri and it worked. Also had trouble parsing the Json, but using a foreach loop fixed this. 
