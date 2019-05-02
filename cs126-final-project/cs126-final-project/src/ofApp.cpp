@@ -101,7 +101,17 @@ void ofApp::draw(){
 				std::vector<int> vec;      //vector of all scores
 				std::map<int, string> map; //maps scores to usernames
 
-				
+				for (ofJson pairs : jn) {
+					for (int key : pairs) {
+						map[key] = pairs.begin().key();
+						vec.push_back(key);
+					}
+				}
+				std::sort(vec.begin(), vec.end(), greater<int>());
+				for (int i = 0; i < leaderboard_count; i++) {
+					scores[i].set(map[vec[i]] + "", vec[i]);
+					gui.add(scores[i]);
+				}
 			}
 			else
 			{
