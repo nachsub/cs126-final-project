@@ -11,10 +11,6 @@ void Image::setup() {
 	image.resize(image_width, image_height);
 }
 
-void Image::update() {
-
-}
-
 void Image::draw() {
 	image.draw(x, y);
 }

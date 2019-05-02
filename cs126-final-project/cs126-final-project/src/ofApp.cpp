@@ -1,24 +1,6 @@
 #include "ofApp.h"
 
 
-ofImage game_over;
-
-
-const int go_height = 700;
-const int go_width = 700;
-
-int score;
-
-
-string shipname = "spaceship.png";
-string gameover = "gameover.png";
-string ballname = "basketball.png";
-const int ball_x_speed = 3; //ball x_speed
-const int ball_y_speed = 3; //ball y_speed
-
-Ball ball(ballname, ball_x_speed, ball_y_speed);
-Image image(shipname);
-
 //--------------------------------------------------------------
 void ofApp::setup(){
 	score = 0;
@@ -27,6 +9,49 @@ void ofApp::setup(){
 	game_over.load(gameover);
 	game_over.resize(ofGetWidth() / 2, ofGetHeight() / 2);
 	ofBackground(0, 0, 0);
+
+	std::string uri = "https://cs126-breakout.firebaseio.com/";
+
+	std::multimap<std::string, std::string> formFields =
+	{
+		{ "test_0", "123" },
+		{ "test_1", "321" }
+	};
+
+	
+
+	ofxHTTP::Client client;
+	ofxHTTP::PostRequest request(uri);
+	request.addFormFields(formFields);
+
+	try
+	{
+		// Execute the request.
+		auto response = client.execute(request);
+
+		std::cout << "nig";
+
+		std::cout << response->getStatus();
+		// Check the response.
+		if (response->getStatus() == Poco::Net::HTTPResponse::HTTP_OK)
+		{
+			// A successful response.
+			ofLogNotice("ofApp::setup") << "Response success, expecting " << response->estimatedContentLength() << " bytes.";
+
+		}
+		else
+		{
+			ofLogError("ofApp::setup") << response->getStatus() << " " << response->getReason();
+		}
+	}
+	catch (const Poco::Exception& exc)
+	{
+		ofLogError("ofApp::setup") << exc.displayText();
+	}
+	catch (const std::exception& exc)
+	{
+		ofLogError("ofApp::setup") << exc.what();
+	}
 }
 
 //--------------------------------------------------------------

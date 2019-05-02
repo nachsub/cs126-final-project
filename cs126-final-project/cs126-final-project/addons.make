@@ -1,3 +1,8 @@
 ofxGui
+ofxHTTP-master
+ofxIO-master
+ofxMediaType-master
 ofxNetwork
-ofxOsc
+ofxNetworkUtils-master
+ofxPoco
+ofxSSLManager-master

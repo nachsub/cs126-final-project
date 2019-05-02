@@ -1,4 +1,4 @@
-Could not access OpenFrameworksLib.log, fixed by running vs as admin.
+Could not access OpenFrameworksLib.log, fixed by running VS as admin.
 
 used curl to update the database
 
@@ -10,3 +10,7 @@ Added ball.h and ball.cpp files, but got exception :
 Exception thrown at 0x0000000000000000 in cs126-final-project_debug.exe: 0xC0000005: Access violation executing location 0x0000000000000000.
 To fix this, I moved ball_image.load(filename) from the constructor to the setup method in ball.cpp, 
 which fixed it.
+
+While adding ofxHttp and its dependecies through project generator, I had no errors, but needed 
+to run as admin.
+

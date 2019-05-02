@@ -1,265 +1,574 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <ItemGroup Label="ProjectConfigurations">
-    <ProjectConfiguration Include="Debug|Win32">
-      <Configuration>Debug</Configuration>
-      <Platform>Win32</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Debug|x64">
-      <Configuration>Debug</Configuration>
-      <Platform>x64</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Release|Win32">
-      <Configuration>Release</Configuration>
-      <Platform>Win32</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Release|x64">
-      <Configuration>Release</Configuration>
-      <Platform>x64</Platform>
-    </ProjectConfiguration>
-  </ItemGroup>
-  <PropertyGroup Label="Globals">
-    <ProjectGuid>{7FD42DF7-442E-479A-BA76-D0022F99702A}</ProjectGuid>
-    <Keyword>Win32Proj</Keyword>
-    <RootNamespace>cs126_final_project</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
-  </PropertyGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
-    <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v141</PlatformToolset>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
-    <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v141</PlatformToolset>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
-    <CharacterSet>Unicode</CharacterSet>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v141</PlatformToolset>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
-    <CharacterSet>Unicode</CharacterSet>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v141</PlatformToolset>
-  </PropertyGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="C:\Program Files\of_v0.10.1_vs2017_release\libs\openFrameworksCompiled\project\vs\openFrameworksRelease.props" />
-  </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="C:\Program Files\of_v0.10.1_vs2017_release\libs\openFrameworksCompiled\project\vs\openFrameworksRelease.props" />
-  </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="C:\Program Files\of_v0.10.1_vs2017_release\libs\openFrameworksCompiled\project\vs\openFrameworksDebug.props" />
-  </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="C:\Program Files\of_v0.10.1_vs2017_release\libs\openFrameworksCompiled\project\vs\openFrameworksDebug.props" />
-  </ImportGroup>
-  <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>bin\</OutDir>
-    <IntDir>obj\$(Configuration)\</IntDir>
-    <TargetName>$(ProjectName)_debug</TargetName>
-    <LinkIncremental>true</LinkIncremental>
-    <GenerateManifest>true</GenerateManifest>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>bin\</OutDir>
-    <IntDir>obj\$(Configuration)\</IntDir>
-    <TargetName>$(ProjectName)_debug</TargetName>
-    <LinkIncremental>true</LinkIncremental>
-    <GenerateManifest>true</GenerateManifest>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>bin\</OutDir>
-    <IntDir>obj\$(Configuration)\</IntDir>
-    <LinkIncremental>false</LinkIncremental>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>bin\</OutDir>
-    <IntDir>obj\$(Configuration)\</IntDir>
-    <LinkIncremental>false</LinkIncremental>
-  </PropertyGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <ClCompile>
-      <Optimization>Disabled</Optimization>
-      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>C:\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src;C:\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src;
-C:\Program Files\of_v0.10.1_vs2017_release\addons\ofxOsc\src;
-C:\Program Files\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src;
-C:\Program Files\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip;
-C:\Program Files\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\posix;
-C:\Program Files\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\win32;
-C:\Program Files\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\osc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <CompileAs>CompileAsCpp</CompileAs>
-    </ClCompile>
-    <Link>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <SubSystem>Console</SubSystem>
-      <RandomizedBaseAddress>false</RandomizedBaseAddress>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-    </Link>
-    <PostBuildEvent>
-    </PostBuildEvent>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <ClCompile>
-      <Optimization>Disabled</Optimization>
-      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>C:\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src;C:\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src;
-C:\Program Files\of_v0.10.1_vs2017_release\addons\ofxOsc\src;
-C:\Program Files\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src;
-C:\Program Files\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip;
-C:\Program Files\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\posix;
-C:\Program Files\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\win32;
-C:\Program Files\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\osc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <CompileAs>CompileAsCpp</CompileAs>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
-    </ClCompile>
-    <Link>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <SubSystem>Console</SubSystem>
-      <RandomizedBaseAddress>false</RandomizedBaseAddress>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-    </Link>
-    <PostBuildEvent>
-    </PostBuildEvent>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <ClCompile>
-      <WholeProgramOptimization>false</WholeProgramOptimization>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>C:\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src;C:\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src;
-C:\Program Files\of_v0.10.1_vs2017_release\addons\ofxOsc\src;
-C:\Program Files\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src;
-C:\Program Files\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip;
-C:\Program Files\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\posix;
-C:\Program Files\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\win32;
-C:\Program Files\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\osc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <CompileAs>CompileAsCpp</CompileAs>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
-    </ClCompile>
-    <Link>
-      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
-      <GenerateDebugInformation>false</GenerateDebugInformation>
-      <SubSystem>Console</SubSystem>
-      <OptimizeReferences>true</OptimizeReferences>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <RandomizedBaseAddress>false</RandomizedBaseAddress>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-    </Link>
-    <PostBuildEvent>
-    </PostBuildEvent>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <ClCompile>
-      <WholeProgramOptimization>false</WholeProgramOptimization>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>C:\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src;C:\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src;
-C:\Program Files\of_v0.10.1_vs2017_release\addons\ofxOsc\src;
-C:\Program Files\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src;
-C:\Program Files\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip;
-C:\Program Files\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\posix;
-C:\Program Files\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\win32;
-C:\Program Files\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\osc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <CompileAs>CompileAsCpp</CompileAs>
-    </ClCompile>
-    <Link>
-      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
-      <GenerateDebugInformation>false</GenerateDebugInformation>
-      <SubSystem>Console</SubSystem>
-      <OptimizeReferences>true</OptimizeReferences>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <RandomizedBaseAddress>false</RandomizedBaseAddress>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-    </Link>
-    <PostBuildEvent>
-    </PostBuildEvent>
-  </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxBaseGui.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxButton.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxColorPicker.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxGuiGroup.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxInputField.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxLabel.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxPanel.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxSlider.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxSliderGroup.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxToggle.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src\ofxNetworkUtils.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src\ofxTCPClient.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src\ofxTCPManager.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src\ofxTCPServer.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src\ofxUDPManager.cpp" />
-    <ClCompile Include="src\ball.cpp" />
-    <ClCompile Include="src\image.cpp" />
-    <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\ofApp.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxBaseGui.h" />
-    <ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxButton.h" />
-    <ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxColorPicker.h" />
-    <ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxGui.h" />
-    <ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxGuiGroup.h" />
-    <ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxInputField.h" />
-    <ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxLabel.h" />
-    <ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxPanel.h" />
-    <ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxSlider.h" />
-    <ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxSliderGroup.h" />
-    <ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxToggle.h" />
-    <ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src\ofxNetwork.h" />
-    <ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src\ofxNetworkUtils.h" />
-    <ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src\ofxTCPClient.h" />
-    <ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src\ofxTCPManager.h" />
-    <ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src\ofxTCPServer.h" />
-    <ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src\ofxTCPSettings.h" />
-    <ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src\ofxUDPManager.h" />
-    <ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src\ofxUDPSettings.h" />
-    <ClInclude Include="src\ball.h" />
-    <ClInclude Include="src\image.h" />
-    <ClInclude Include="src\ofApp.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="$(OF_ROOT)\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">
-      <Project>{5837595d-aca9-485c-8e76-729040ce4b0b}</Project>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="icon.rc">
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">/D_DEBUG %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">/D_DEBUG %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>$(OF_ROOT)\libs\openFrameworksCompiled\project\vs</AdditionalIncludeDirectories>
-    </ResourceCompile>
-  </ItemGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ProjectExtensions>
-    <VisualStudio>
-      <UserProperties RESOURCE_FILE="icon.rc" />
-    </VisualStudio>
-  </ProjectExtensions>
+	<ItemGroup Label="ProjectConfigurations">
+		<ProjectConfiguration Include="Debug|Win32">
+			<Configuration>Debug</Configuration>
+			<Platform>Win32</Platform>
+		</ProjectConfiguration>
+		<ProjectConfiguration Include="Debug|x64">
+			<Configuration>Debug</Configuration>
+			<Platform>x64</Platform>
+		</ProjectConfiguration>
+		<ProjectConfiguration Include="Release|Win32">
+			<Configuration>Release</Configuration>
+			<Platform>Win32</Platform>
+		</ProjectConfiguration>
+		<ProjectConfiguration Include="Release|x64">
+			<Configuration>Release</Configuration>
+			<Platform>x64</Platform>
+		</ProjectConfiguration>
+	</ItemGroup>
+	<PropertyGroup Condition="'$(WindowsTargetPlatformVersion)'==''">
+		<LatestTargetPlatformVersion>$([Microsoft.Build.Utilities.ToolLocationHelper]::GetLatestSDKTargetPlatformVersion('Windows', '10.0'))</LatestTargetPlatformVersion>
+		<WindowsTargetPlatformVersion Condition="'$(WindowsTargetPlatformVersion)' == ''">$(LatestTargetPlatformVersion)</WindowsTargetPlatformVersion>
+		<TargetPlatformVersion>$(WindowsTargetPlatformVersion)</TargetPlatformVersion>
+	</PropertyGroup>
+	<PropertyGroup Label="Globals">
+		<ProjectGuid>{7FD42DF7-442E-479A-BA76-D0022F99702A}</ProjectGuid>
+		<Keyword>Win32Proj</Keyword>
+		<RootNamespace>cs126-final-project</RootNamespace>
+	</PropertyGroup>
+	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+		<ConfigurationType>Application</ConfigurationType>
+		<CharacterSet>Unicode</CharacterSet>
+		<PlatformToolset>v141</PlatformToolset>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+		<ConfigurationType>Application</ConfigurationType>
+		<CharacterSet>Unicode</CharacterSet>
+		<PlatformToolset>v141</PlatformToolset>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+		<ConfigurationType>Application</ConfigurationType>
+		<CharacterSet>Unicode</CharacterSet>
+		<WholeProgramOptimization>true</WholeProgramOptimization>
+		<PlatformToolset>v141</PlatformToolset>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+		<ConfigurationType>Application</ConfigurationType>
+		<CharacterSet>Unicode</CharacterSet>
+		<WholeProgramOptimization>true</WholeProgramOptimization>
+		<PlatformToolset>v141</PlatformToolset>
+	</PropertyGroup>
+	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+		<Import Project="../../../../../../../Program Files/of_v0.10.1_vs2017_release/libs\openFrameworksCompiled\project\vs\openFrameworksRelease.props" />
+	</ImportGroup>
+	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+		<Import Project="../../../../../../../Program Files/of_v0.10.1_vs2017_release/libs\openFrameworksCompiled\project\vs\openFrameworksRelease.props" />
+	</ImportGroup>
+	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+		<Import Project="../../../../../../../Program Files/of_v0.10.1_vs2017_release/libs\openFrameworksCompiled\project\vs\openFrameworksDebug.props" />
+	</ImportGroup>
+	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+		<Import Project="../../../../../../../Program Files/of_v0.10.1_vs2017_release/libs\openFrameworksCompiled\project\vs\openFrameworksDebug.props" />
+	</ImportGroup>
+	<PropertyGroup Label="UserMacros" />
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+		<OutDir>bin\</OutDir>
+		<IntDir>obj\$(Platform)\$(Configuration)\</IntDir>
+		<TargetName>$(ProjectName)_debug</TargetName>
+		<LinkIncremental>true</LinkIncremental>
+		<GenerateManifest>true</GenerateManifest>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+		<OutDir>bin\</OutDir>
+		<IntDir>obj\$(Platform)\$(Configuration)\</IntDir>
+		<TargetName>$(ProjectName)_debug</TargetName>
+		<LinkIncremental>true</LinkIncremental>
+		<GenerateManifest>true</GenerateManifest>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+		<OutDir>bin\</OutDir>
+		<IntDir>obj\$(Platform)\$(Configuration)\</IntDir>
+		<LinkIncremental>false</LinkIncremental>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+		<OutDir>bin\</OutDir>
+		<IntDir>obj\$(Platform)\$(Configuration)\</IntDir>
+		<LinkIncremental>false</LinkIncremental>
+	</PropertyGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+		<ClCompile>
+			<Optimization>Disabled</Optimization>
+			<BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+			<RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+			<WarningLevel>Level3</WarningLevel>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\alphanum;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\alphanum\include;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\common;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\dec;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\tools;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\lz4;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\lz4\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\IO;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\snappy;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\snappy\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxMediaType-master\libs;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxMediaType-master\libs\ofxMediaType;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxMediaType-master\libs\ofxMediaType\include;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxMediaType-master\libs\ofxMediaType\include\ofx;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxMediaType-master\libs\ofxMediaType\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxMediaType-master\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetworkUtils-master\libs;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetworkUtils-master\libs\ofxNetworkUtils;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetworkUtils-master\libs\ofxNetworkUtils\include;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetworkUtils-master\libs\ofxNetworkUtils\include\ofx;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetworkUtils-master\libs\ofxNetworkUtils\include\ofx\Net;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetworkUtils-master\libs\ofxNetworkUtils\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetworkUtils-master\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxPoco\libs\poco\include;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxPoco\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxSSLManager-master\src</AdditionalIncludeDirectories>
+			<CompileAs>CompileAsCpp</CompileAs>
+			<ObjectFileName>$(IntDir)</ObjectFileName>
+			<AdditionalOptions>-DPOCO_STATIC</AdditionalOptions>
+		</ClCompile>
+		<Link>
+			<GenerateDebugInformation>true</GenerateDebugInformation>
+			<SubSystem>Console</SubSystem>
+			<RandomizedBaseAddress>false</RandomizedBaseAddress>
+			<AdditionalDependencies>%(AdditionalDependencies);PocoCryptomdd.lib;PocoDatamdd.lib;PocoDataSQLitemdd.lib;PocoFoundationmdd.lib;PocoJSONmdd.lib;PocoNetmdd.lib;PocoNetSSLmdd.lib;PocoPDFmdd.lib;PocoUtilmdd.lib;PocoXMLmdd.lib;PocoZipmdd.lib;iphlpapi.lib</AdditionalDependencies>
+			<AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxPoco\libs\poco\lib\vs\Win32\Debug;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxPoco</AdditionalLibraryDirectories>
+		</Link>
+		<PostBuildEvent />
+	</ItemDefinitionGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+		<ClCompile>
+			<Optimization>Disabled</Optimization>
+			<BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+			<RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+			<WarningLevel>Level3</WarningLevel>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\alphanum;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\alphanum\include;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\common;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\dec;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\tools;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\lz4;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\lz4\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\IO;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\snappy;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\snappy\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxMediaType-master\libs;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxMediaType-master\libs\ofxMediaType;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxMediaType-master\libs\ofxMediaType\include;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxMediaType-master\libs\ofxMediaType\include\ofx;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxMediaType-master\libs\ofxMediaType\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxMediaType-master\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetworkUtils-master\libs;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetworkUtils-master\libs\ofxNetworkUtils;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetworkUtils-master\libs\ofxNetworkUtils\include;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetworkUtils-master\libs\ofxNetworkUtils\include\ofx;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetworkUtils-master\libs\ofxNetworkUtils\include\ofx\Net;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetworkUtils-master\libs\ofxNetworkUtils\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetworkUtils-master\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxPoco\libs\poco\include;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxPoco\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxSSLManager-master\src</AdditionalIncludeDirectories>
+			<CompileAs>CompileAsCpp</CompileAs>
+			<MultiProcessorCompilation>true</MultiProcessorCompilation>
+			<ObjectFileName>$(IntDir)</ObjectFileName>
+			<AdditionalOptions>-DPOCO_STATIC</AdditionalOptions>
+		</ClCompile>
+		<Link>
+			<GenerateDebugInformation>true</GenerateDebugInformation>
+			<SubSystem>Console</SubSystem>
+			<RandomizedBaseAddress>false</RandomizedBaseAddress>
+			<AdditionalDependencies>%(AdditionalDependencies);PocoCryptomdd.lib;PocoDatamdd.lib;PocoDataSQLitemdd.lib;PocoFoundationmdd.lib;PocoJSONmdd.lib;PocoNetmdd.lib;PocoNetSSLmdd.lib;PocoPDFmdd.lib;PocoUtilmdd.lib;PocoXMLmdd.lib;PocoZipmdd.lib;iphlpapi.lib</AdditionalDependencies>
+			<AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxPoco\libs\poco\lib\vs\x64\Debug;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxPoco</AdditionalLibraryDirectories>
+		</Link>
+		<PostBuildEvent />
+	</ItemDefinitionGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+		<ClCompile>
+			<WholeProgramOptimization>false</WholeProgramOptimization>
+			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+			<RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+			<WarningLevel>Level3</WarningLevel>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\alphanum;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\alphanum\include;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\common;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\dec;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\tools;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\lz4;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\lz4\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\IO;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\snappy;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\snappy\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxMediaType-master\libs;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxMediaType-master\libs\ofxMediaType;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxMediaType-master\libs\ofxMediaType\include;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxMediaType-master\libs\ofxMediaType\include\ofx;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxMediaType-master\libs\ofxMediaType\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxMediaType-master\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetworkUtils-master\libs;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetworkUtils-master\libs\ofxNetworkUtils;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetworkUtils-master\libs\ofxNetworkUtils\include;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetworkUtils-master\libs\ofxNetworkUtils\include\ofx;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetworkUtils-master\libs\ofxNetworkUtils\include\ofx\Net;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetworkUtils-master\libs\ofxNetworkUtils\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetworkUtils-master\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxPoco\libs\poco\include;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxPoco\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxSSLManager-master\src</AdditionalIncludeDirectories>
+			<CompileAs>CompileAsCpp</CompileAs>
+			<MultiProcessorCompilation>true</MultiProcessorCompilation>
+			<ObjectFileName>$(IntDir)</ObjectFileName>
+			<AdditionalOptions>-DPOCO_STATIC</AdditionalOptions>
+		</ClCompile>
+		<Link>
+			<IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+			<GenerateDebugInformation>false</GenerateDebugInformation>
+			<SubSystem>Console</SubSystem>
+			<OptimizeReferences>true</OptimizeReferences>
+			<EnableCOMDATFolding>true</EnableCOMDATFolding>
+			<RandomizedBaseAddress>false</RandomizedBaseAddress>
+			<AdditionalDependencies>%(AdditionalDependencies);PocoCryptomd.lib;PocoDatamd.lib;PocoDataSQLitemd.lib;PocoFoundationmd.lib;PocoJSONmd.lib;PocoNetmd.lib;PocoNetSSLmd.lib;PocoPDFmd.lib;PocoUtilmd.lib;PocoXMLmd.lib;PocoZipmd.lib;iphlpapi.lib</AdditionalDependencies>
+			<AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxPoco\libs\poco\lib\vs\Win32\Release;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxPoco</AdditionalLibraryDirectories>
+		</Link>
+		<PostBuildEvent />
+	</ItemDefinitionGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+		<ClCompile>
+			<WholeProgramOptimization>false</WholeProgramOptimization>
+			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+			<RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+			<WarningLevel>Level3</WarningLevel>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\alphanum;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\alphanum\include;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\common;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\dec;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\tools;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\lz4;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\lz4\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\IO;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\snappy;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\snappy\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxMediaType-master\libs;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxMediaType-master\libs\ofxMediaType;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxMediaType-master\libs\ofxMediaType\include;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxMediaType-master\libs\ofxMediaType\include\ofx;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxMediaType-master\libs\ofxMediaType\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxMediaType-master\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetworkUtils-master\libs;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetworkUtils-master\libs\ofxNetworkUtils;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetworkUtils-master\libs\ofxNetworkUtils\include;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetworkUtils-master\libs\ofxNetworkUtils\include\ofx;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetworkUtils-master\libs\ofxNetworkUtils\include\ofx\Net;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetworkUtils-master\libs\ofxNetworkUtils\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetworkUtils-master\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxPoco\libs\poco\include;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxPoco\src;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxSSLManager-master\src</AdditionalIncludeDirectories>
+			<CompileAs>CompileAsCpp</CompileAs>
+			<ObjectFileName>$(IntDir)</ObjectFileName>
+			<AdditionalOptions>-DPOCO_STATIC</AdditionalOptions>
+		</ClCompile>
+		<Link>
+			<IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+			<GenerateDebugInformation>false</GenerateDebugInformation>
+			<SubSystem>Console</SubSystem>
+			<OptimizeReferences>true</OptimizeReferences>
+			<EnableCOMDATFolding>true</EnableCOMDATFolding>
+			<RandomizedBaseAddress>false</RandomizedBaseAddress>
+			<AdditionalDependencies>%(AdditionalDependencies);PocoCryptomd.lib;PocoDatamd.lib;PocoDataSQLitemd.lib;PocoFoundationmd.lib;PocoJSONmd.lib;PocoNetmd.lib;PocoNetSSLmd.lib;PocoPDFmd.lib;PocoUtilmd.lib;PocoXMLmd.lib;PocoZipmd.lib;iphlpapi.lib</AdditionalDependencies>
+			<AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxPoco\libs\poco\lib\vs\x64\Release;..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxPoco</AdditionalLibraryDirectories>
+		</Link>
+		<PostBuildEvent />
+	</ItemDefinitionGroup>
+	<ItemGroup>
+		<ClCompile Include="src\main.cpp" />
+		<ClCompile Include="src\ofApp.cpp" />
+		<ClCompile Include="src\background.cpp" />
+		<ClCompile Include="src\ball.cpp" />
+		<ClCompile Include="src\image.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxBaseGui.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxButton.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxColorPicker.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxGuiGroup.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxInputField.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxLabel.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxPanel.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxSlider.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxSliderGroup.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxToggle.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\AuthScope.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\BaseClient.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\BaseRoute.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\BaseServer.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\Client.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\ClientCache.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\ClientEvents.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\ClientProgressStream.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\ClientSessionProvider.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\ClientSessionSettings.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\ClientState.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\Context.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\Cookie.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\CookieStore.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\CookieUtils.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\Credentials.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\CredentialStore.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\DefaultClientHeaders.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\DefaultCookieProcessor.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\DefaultEncodingResponseStreamFilter.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\DefaultProxyProcessor.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\DefaultRedirectProcessor.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\FileSystemRoute.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\FormRequest.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\GetRequest.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\GetRequestTask.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\HeadRequest.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\HTTPClient.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\HTTPHost.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\HTTPUtils.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\IPVideoFrame.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\IPVideoRoute.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\JSONRequest.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\JSONWebToken.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\OAuth10Credentials.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\OAuth10HTTPClient.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\OAuth10RequestFilter.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\OAuth20Credentials.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\OAuth20HTTPClient.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\OAuth20RequestFilter.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\PostRequest.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\PostRoute.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\PostRouteEvents.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\Progress.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\ProxySettings.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\PutRequest.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\Request.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\RequestHandlerAdapter.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\Response.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\Session.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\SessionStore.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\SimpleClient.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\SimpleFileServer.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\SimpleIPVideoServer.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\SimplePostServer.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\SimpleSSEServer.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\SimpleWebSocketServer.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\SSEConnection.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\SSEFrame.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\SSERoute.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\ThreadSettings.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\URIBuilder.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\WebSocketConnection.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\WebSocketExtensions.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\WebSocketFrame.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\src\WebSocketRoute.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\common\dictionary.c" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\dec\bit_reader.c" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\dec\decode.c" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\dec\huffman.c" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\dec\state.c" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\backward_references.c" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\bit_cost.c" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\block_splitter.c" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\brotli_bit_stream.c" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\cluster.c" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\compressor.cc" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\compress_fragment.c" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\compress_fragment_two_pass.c" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\encode.c" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\encode_parallel.cc" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\entropy_encode.c" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\histogram.c" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\literal_cost.c" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\memory.c" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\metablock.c" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\static_dict.c" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\streams.cc" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\utf8_util.c" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\lz4\src\lz4.c" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\src\BackoffStrategy.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\src\Base64Encoding.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\src\ByteBuffer.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\src\ByteBufferReader.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\src\ByteBufferStream.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\src\ByteBufferUtils.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\src\ByteBufferWriter.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\src\COBSEncoding.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\src\Compression.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\src\DeviceFilter.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\src\DirectoryFilter.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\src\DirectoryUtils.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\src\DirectoryWatcher.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\src\DirectoryWatcherManager.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\src\FileExtensionFilter.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\src\FilteredStreams.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\src\Hash.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\src\HexBinaryEncoding.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\src\HiddenFileFilter.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\src\ImageUtils.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\src\JSONUtils.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\src\LinkFilter.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\src\PathFilterCollection.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\src\PollingThread.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\src\RecursiveDirectoryIterator.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\src\RecursiveDirectoryIteratorStategies.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\src\RegexPathFilter.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\src\SearchPath.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\src\SLIPEncoding.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\src\StreamFilters.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\src\Thread.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\src\ThreadsafeLoggerChannel.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\src\URIEncoding.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\snappy\src\snappy-c.cc" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\snappy\src\snappy-sinksource.cc" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\snappy\src\snappy-stubs-internal.cc" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\snappy\src\snappy.cc" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxMediaType-master\libs\ofxMediaType\src\MediaTypeMap.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src\ofxNetworkUtils.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src\ofxTCPClient.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src\ofxTCPManager.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src\ofxTCPServer.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src\ofxUDPManager.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetworkUtils-master\libs\ofxNetworkUtils\src\IPAddressRange.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetworkUtils-master\libs\ofxNetworkUtils\src\NetworkInterfaceListener.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetworkUtils-master\libs\ofxNetworkUtils\src\NetworkUtils.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxPoco\src\ofxXmlPoco.cpp" />
+		<ClCompile Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxSSLManager-master\src\ofSSLManager.cpp" />
+	</ItemGroup>
+	<ItemGroup>
+		<ClInclude Include="src\ofApp.h" />
+		<ClInclude Include="src\background.h" />
+		<ClInclude Include="src\ball.h" />
+		<ClInclude Include="src\image.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxBaseGui.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxButton.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxColorPicker.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxGui.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxGuiGroup.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxInputField.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxLabel.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxPanel.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxSlider.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxSliderGroup.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxGui\src\ofxToggle.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\src\ofxHTTP.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\AbstractClientTypes.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\AbstractServerTypes.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\Authentication.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\AuthScope.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\BaseClient.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\BaseRoute.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\BaseServer.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\Client.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\ClientCache.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\ClientEvents.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\ClientProgressStream.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\ClientSessionProvider.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\ClientSessionSettings.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\ClientState.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\Context.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\Cookie.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\CookieStore.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\CookieUtils.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\Credentials.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\CredentialStore.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\DefaultClientHeaders.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\DefaultCookieProcessor.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\DefaultEncodingResponseStreamFilter.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\DefaultProxyProcessor.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\DefaultRedirectProcessor.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\FileSystemRoute.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\FormRequest.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\GetRequest.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\GetRequestTask.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\HeadRequest.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\HTTP.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\HTTPClient.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\HTTPHost.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\HTTPUtils.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\IPVideoFrame.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\IPVideoRoute.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\JSONRequest.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\JSONResponse.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\JSONWebToken.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\OAuth10Credentials.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\OAuth10HTTPClient.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\OAuth10RequestFilter.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\OAuth20Credentials.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\OAuth20HTTPClient.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\OAuth20RequestFilter.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\PostRequest.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\PostRoute.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\PostRouteEvents.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\Progress.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\ProxySettings.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\PutRequest.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\Request.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\RequestHandlerAdapter.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\Response.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\ServerEvents.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\Session.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\SessionStore.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\SimpleClient.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\SimpleFileServer.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\SimpleIPVideoServer.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\SimplePostServer.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\SimpleSSEServer.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\SimpleWebSocketServer.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\SSEConnection.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\SSEEvents.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\SSEFrame.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\SSERoute.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\ThreadErrorHandler.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\ThreadSettings.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\URIBuilder.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\WebSocketConnection.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\WebSocketEvents.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\WebSocketExtensions.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\WebSocketFrame.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxHTTP-master\libs\ofxHTTP\include\ofx\HTTP\WebSocketRoute.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\src\ofxIO.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\alphanum\include\alphanum.hpp" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\common\constants.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\common\dictionary.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\common\port.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\common\types.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\dec\bit_reader.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\dec\context.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\dec\decode.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\dec\huffman.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\dec\port.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\dec\prefix.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\dec\state.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\dec\transform.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\backward_references.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\backward_references_inc.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\bit_cost.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\bit_cost_inc.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\block_encoder_inc.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\block_splitter.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\block_splitter_inc.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\brotli_bit_stream.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\cluster.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\cluster_inc.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\command.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\compressor.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\compress_fragment.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\compress_fragment_two_pass.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\context.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\dictionary_hash.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\encode.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\encode_parallel.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\entropy_encode.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\entropy_encode_static.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\fast_log.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\find_match_length.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\hash.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\hash_forgetful_chain_inc.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\hash_longest_match_inc.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\hash_longest_match_quickly_inc.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\histogram.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\histogram_inc.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\literal_cost.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\memory.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\metablock.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\metablock_inc.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\port.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\prefix.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\quality.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\ringbuffer.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\static_dict.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\static_dict_lut.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\streams.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\utf8_util.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\enc\write_bits.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\brotli\src\tools\version.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\lz4\src\lz4.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\AbstractCache.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\DirectoryWatcher.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\IO\AbstractTypes.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\IO\BackoffStrategy.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\IO\Base64Encoding.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\IO\ByteBuffer.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\IO\ByteBufferParser.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\IO\ByteBufferReader.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\IO\ByteBufferStream.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\IO\ByteBufferUtils.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\IO\ByteBufferWriter.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\IO\COBSEncoding.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\IO\Compression.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\IO\DeviceFilter.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\IO\DirectoryFilter.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\IO\DirectoryUtils.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\IO\DirectoryWatcherManager.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\IO\FileExtensionFilter.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\IO\FilteredStreams.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\IO\Hash.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\IO\HexBinaryEncoding.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\IO\HiddenFileFilter.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\IO\ImageUtils.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\IO\JSONUtils.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\IO\LinkFilter.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\IO\ObjectPool.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\IO\PathFilterCollection.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\IO\PollingThread.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\IO\RegexPathFilter.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\IO\SearchPath.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\IO\SLIPEncoding.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\IO\StreamFilters.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\IO\Thread.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\IO\ThreadChannel.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\IO\ThreadsafeLoggerChannel.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\IO\URIEncoding.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\LRUCache.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\LRUStrategy.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\ObjectPool.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\RecursiveDirectoryIterator.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\RecursiveDirectoryIteratorImpl.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\ofxIO\include\ofx\RecursiveDirectoryIteratorStategies.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\snappy\src\snappy-c.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\snappy\src\snappy-internal.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\snappy\src\snappy-sinksource.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\snappy\src\snappy-stubs-internal.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\snappy\src\snappy-stubs-public.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxIO-master\libs\snappy\src\snappy.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxMediaType-master\src\ofxMediaType.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxMediaType-master\libs\ofxMediaType\include\ofx\AbstractMediaTypeProvider.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxMediaType-master\libs\ofxMediaType\include\ofx\MediaTypeMap.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src\ofxNetwork.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src\ofxNetworkUtils.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src\ofxTCPClient.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src\ofxTCPManager.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src\ofxTCPServer.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src\ofxTCPSettings.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src\ofxUDPManager.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetwork\src\ofxUDPSettings.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetworkUtils-master\src\ofxNetworkUtils.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetworkUtils-master\libs\ofxNetworkUtils\include\ofx\Net\IPAddressRange.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetworkUtils-master\libs\ofxNetworkUtils\include\ofx\Net\NetworkInterfaceListener.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxNetworkUtils-master\libs\ofxNetworkUtils\include\ofx\Net\NetworkUtils.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxPoco\src\ofxXmlPoco.h" />
+		<ClInclude Include="..\..\..\..\..\..\..\Program Files\of_v0.10.1_vs2017_release\addons\ofxSSLManager-master\src\ofSSLManager.h" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="$(OF_ROOT)\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">
+			<Project>{5837595d-aca9-485c-8e76-729040ce4b0b}</Project>
+		</ProjectReference>
+	</ItemGroup>
+	<ItemGroup>
+		<ResourceCompile Include="icon.rc">
+			<AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">/D_DEBUG %(AdditionalOptions)</AdditionalOptions>
+			<AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">/D_DEBUG %(AdditionalOptions)</AdditionalOptions>
+			<AdditionalIncludeDirectories>$(OF_ROOT)\libs\openFrameworksCompiled\project\vs</AdditionalIncludeDirectories>
+		</ResourceCompile>
+	</ItemGroup>
+	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+	<ProjectExtensions>
+		<VisualStudio>
+			<UserProperties RESOURCE_FILE="icon.rc" />
+		</VisualStudio>
+	</ProjectExtensions>
 </Project>

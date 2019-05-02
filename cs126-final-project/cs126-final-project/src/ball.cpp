@@ -12,9 +12,7 @@ void Ball::setup() {
 	x = ofGetWidth() / 2;
 	y = ofGetHeight() / 2;
 }
-void Ball::update() {
 
-}
 void Ball::draw() {
 	ball_image.draw(x, y);
 }
