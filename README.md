@@ -1,6 +1,6 @@
 # Final Project
+<h1> Author: Nachiket Subbaraman <h1>
 <h1> cs 126 breakout <h1>
-
 To build this game, git clone the following links into addons, and use the open frameworks project generator 
 to add them to the project (as well as ofxPoco and ofxGui). 
 
